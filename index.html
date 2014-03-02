@@ -66,17 +66,17 @@
 					// 	console.log("Jump to #ex"+i);
 						window.location = "#ex"+i;
 						i++;
-						}, i*40000);
+						}, (i-1)*40000);
 					window.setTimeout(function(){
 					// 	console.log("Jump to #rest");
 						window.location = "#rest";
-						}, i*40000+30000);
+						}, (i-1)*40000+30000);
 				}
 				window.setTimeout(function(){
 				// 	console.log("Jump to #start");
 					window.location = "#start";
 					document.getElementById("start").disabled = ""
-					}, i*40000+40000);
+					}, (i-1)*40000+40000);
 				i = 1;
 				
 			}
