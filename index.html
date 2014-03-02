@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Grégoire's grotte</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+<link rel="stylesheet" href="/style.css"/>
+    <link rel="icon" type="image/png" href="/favicon.svg" />
+    <style>
+		a { color: hsl(300, 100%, 50%); }
+		section { opacity: 0.3; }
+		section:target { opacity: 1; }
+    </style>
+</head>
+<body>
+    <div class="bar">
+        <ul>
+            <li class="home"><a href="/">Accueil</a></li>
+            <li class="m60m"><a href="/m60m/">M60M</a></li>
+            <li class="cesure"><a href="/cesure/">Césure</a></li>
+            <li class="links"><a href="/links/">Liens</a></li>
+            <li class="active min"><a href="/8min/">8min</a></li>
+            <li class="rssbridge"><a href="/rss-bridge/">RSS-Bridge</a></li>
+            <li class="divers"><a href="/divers/">Divers</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <h1>8 minutes training</h1>
+        <h2>Intro et <a href="http://www.wordreference.com/enfr/disclaimer">disclaimer</a></h2>
+		<p>Il parait qu’<a href="http://journals.lww.com/acsm-healthfitness/Fulltext/2013/05000/HIGH_INTENSITY_CIRCUIT_TRAINING_USING_BODY_WEIGHT_.5.aspx">il est possible d’avoir un entraînement super efficace équivalent à plusieurs heures de sport en approximativement 7 minutes</a>. Si c’est fait sérieusement, bien sûr. En pratique, c'est plutôt 8 minutes et je ne veux pas faire de publicité mensongère :)</p>
+		<p>C’est peut-être vrai, peut-être pas, mais si ça vous intéresse, vous pouvez vous y essayer ici. N’oubliez pas que la pratique du sport peut être dangereuse si votre condition physique n’est pas adaptée, et comme d’habitude parlez en à votre médecin. Comprendre : je ne suis pas responsable s’il vous arrive quoi que ce soit.</p>
+	
+		<h2>Procédure</h2>
+		<p>La règle est plutôt simple :</p>
+		<ul>
+			<li>Exercice pendant 30 secondes</li>
+			<li>Repos pendant 10 secondes</li>
+		</ul>
+		<p>L'ensemble peut être répété 2 ou 3 fois selon la motivation, l'envie, le temps disponible et la capacité physique.</p>
+		
+		<h2>Les exercices</h2>
+		<button id="start" onclick="startTraining();">Start !</button>
+		<script>
+			function startTraining()
+			{
+				document.getElementById("start").disabled = "true"
+				ex = [document.getElementById("ex1"),
+				      document.getElementById("ex2"),
+				      document.getElementById("ex3"),
+				      document.getElementById("ex4"),
+				      document.getElementById("ex5"),
+				      document.getElementById("ex6"),
+				      document.getElementById("ex7"),
+				      document.getElementById("ex8"),
+				      document.getElementById("ex9"),
+				      document.getElementById("ex10"),
+				      document.getElementById("ex11"),
+				      document.getElementById("ex12")];
+				rest = document.getElementById("ex13");
+				
+				var i;
+				for(i=1; i<=ex.length; i++)
+				{
+					// console.log("Set target to #ex"+i);
+					window.setTimeout(function(){
+					// 	console.log("Jump to #ex"+i);
+						window.location = "#ex"+i;
+						i++;
+						}, i*40000);
+					window.setTimeout(function(){
+					// 	console.log("Jump to #rest");
+						window.location = "#rest";
+						}, i*40000+30000);
+				}
+				window.setTimeout(function(){
+				// 	console.log("Jump to #start");
+					window.location = "#start";
+					document.getElementById("start").disabled = ""
+					}, i*40000+40000);
+				i = 1;
+				
+			}
+		</script>
+		<section id="ex1" class="total">
+			<h3>Jumping jacks</h3>
+			<img src="Jumping-jacks.svg" alt="8 minutes training: Jumping jacks" />
+		</section>
+		<section id="ex2" class="lower">
+			<h3>Wall sit</h3>
+			<img src="Wall-sit.svg" alt="8 minutes training: Wall sit" />
+		</section>
+		<section id="ex3" class="upper">
+			<h3>Push-up</h3>
+			<img src="Push-up.svg" alt="8 minutes training: Push-up" />
+		</section>
+		<section id="ex4" class="core">
+			<h3>Abdominal crunch</h3>
+			<img src="Abdominal-crunch.svg" alt="8 minutes training: Abdominal crunch" />
+		</section>
+		<section id="ex5" class="total">
+			<h3>Step-up onto chair</h3>
+			<img src="Step-up-onto-chair.svg" alt="8 minutes training: Step-up onto chair" />
+		</section>
+		<section id="ex6" class="lower">
+			<h3>Squat</h3>
+			<img src="Squat.svg" alt="8 minutes training: Squat" />
+		</section>
+		<section id="ex7" class="upper">
+			<h3>Triceps dip on chair</h3>
+			<img src="Triceps-dip-on-chair.svg" alt="8 minutes training: Triceps dip on chair" />
+		</section>
+		<section id="ex8" class="core">
+			<h3>Plank</h3>
+			<img src="Plank.svg" alt="8 minutes training: Plank" />
+		</section>
+		<section id="ex9" class="total">
+			<h3>High knees/running in place</h3>
+			<img src="High-knees-running-in-place.svg" alt="8 minutes training: High knees/running in place" />
+		</section>
+		<section id="ex10" class="lower">
+			<h3>Lunge</h3>
+			<img src="Lunge.svg" alt="8 minutes training: Lunge" />
+		</section>
+		<section id="ex11" class="upper">
+			<h3>Push-up and rotation</h3>
+			<img src="Push-up-and-rotation.svg" alt="8 minutes training: Push-up and rotation" />
+		</section>
+		<section id="ex12" class="core">
+			<h3>Side plank</h3>
+			<img src="Side-plank.svg" alt="8 minutes training: Side plank" />
+		</section>
+		<section id="rest" class="total">
+			<h3>Rest</h3>
+			<img src="Rest.svg" alt="8 minutes training: Rest" />
+		</section>
+	</div>
+    <footer class="bar"><p>Grégoire <span style="font-variant: small-caps">Surrel</span> — Texte et images sous <a href="https://creativecommons.org/licenses/by-sa/4.0/">license CC-BY-SA 4.0</a>.<br/>Entraînement conçu par <a href="http://journals.lww.com/acsm-healthfitness/Fulltext/2013/05000/HIGH_INTENSITY_CIRCUIT_TRAINING_USING_BODY_WEIGHT_.5.aspx">Brett Klika &amp; Chris Jordan</a></p></footer>
+</body>
+</html>
